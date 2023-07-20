@@ -1,5 +1,5 @@
 function SearchingForm(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <form className="d-flex" role="search">
       <input

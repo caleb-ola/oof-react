@@ -19,13 +19,15 @@ function Students() {
       number: "78695242173",
     },
   ];
+
   // This is the function to get data from the child components
   function CollectFromChild(name) {
-    alert("You clicked on" + name);
+    alert("You clicked on" + " " + name);
   }
   return (
-    <div className="container ">
+    <div className="container">
       <div className="row py-5">
+        <h1 className="my-2">Props Explaination</h1>
         {array.map((item, index) => {
           return (
             <div className="col-3" key={index}>

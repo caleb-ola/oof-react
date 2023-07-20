@@ -1,37 +1,21 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Header from "./Header";
-import Hero from "./Hero";
-import Students from "./Students";
-import ShowChildren from "./ShowChildren";
+import About, { Exhibit } from "./pages/about";
+import Home from "./pages/home";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./pages/notFound";
+import Countries from "./pages/countries";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      {/* THIS IS THE STUDENTS COMPONENT */}
-      <Students />
-      {/* <ShowChildren>
-        <div className="my-5">
-          <h3 className="">I AM A CHILD</h3>
-          <h3 className="">I AM A CHILD</h3>
-          <h3 className="">I AM A CHILD</h3>
-        </div>
-      </ShowChildren>
-
-      <ShowChildren>
-        <div className="my-5">
-          <h3>THIS IS THE SECOND CHIDREN WE ARE WORKING ON</h3>
-        </div>
-      </ShowChildren>
-
-      <ShowChildren>
-        <div className="my-5">
-          <h3>THIS IS THE THRID.</h3>
-        </div>
-      </ShowChildren> */}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path={"/"} element={<Home />} />
+        <Route path={"/about"} element={<About />} />
+        <Route path={"/exhibit"} element={<Exhibit />} />
+        <Route path={"/countries"} element={<Countries />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 export default App;

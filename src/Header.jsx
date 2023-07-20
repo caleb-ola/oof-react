@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import App from "./App";
 import "./Header.css";
 import SearchingForm from "./forms/NavSearchForm";
@@ -7,9 +8,9 @@ function Header() {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary header">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link to="/" className="navbar-brand">
             Navbar
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -24,16 +25,21 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
+                <Link className="nav-link" to="/about">
+                  About
+                </Link>
               </li>
-              <li className="nav-item dropdown">
+              <li className="nav-item">
+                <Link className="nav-link" to="/countries">
+                  Countries
+                </Link>
+              </li>
+              {/* <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
@@ -67,7 +73,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <a className="nav-link disabled">Disabled</a>
-              </li>
+              </li> */}
             </ul>
             <SearchingForm buttonName={"Go"} inputValue={"Mr. Mercy"} />
           </div>
